@@ -8,25 +8,46 @@
        1. DISCORD LINK PREVIEW TAGS  (replace yoursite.com + all text)
        These must stay as plain HTML in the file the server sends.
        ===================================================================== -->
-  <title>Your Name - Make something people remember</title>
-  <meta name="description" content="Projects, writing and experiments by Your Name.">
+  <title>Not a Zycher - Make something people remember</title>
+  <meta name="description" content="Projects, writing and experiments by Not a Zycher.">
 
   <meta property="og:site_name" content="Not a Zycher">
   <meta property="og:title" content="Make something people remember.">
-  <meta property="og:description" content="Projects, writing and experiments by Your Name. New stuff every week.">
-  <meta property="og:url" content="https://whos-zycher.github.io/lkijuh8y7t6r5e45fgt6yhujik/">
+  <meta property="og:description" content="Projects, writing and experiments by Not a Zycher. New stuff every week.">
+  <meta property="og:url" content="https://yoursite.com/">
 
-  <meta property="og:image" content="https://whos-zycher.github.io/lkijuh8y7t6r5e45fgt6yhujik/og-image.png">
+  <meta property="og:image" content="https://yoursite.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Not a zycher - projects, writing and experiments">
+  <meta property="og:image:alt" content="Not a Zycher - projects, writing and experiments">
   <meta name="twitter:card" content="summary_large_image">
 
   <meta name="theme-color" content="#FF6B57">
 
   <!-- Optional author line. Remove if you don't host oembed.json -->
-  <link type="application/json+oembed" href="https://whos-zycher.github.io/lkijuh8y7t6r5e45fgt6yhujik/oembed.json">
+  <link type="application/json+oembed" href="https://yoursite.com/oembed.json">
+
+  <!-- =====================================================================
+       1b. COMPONENT EMBED (buttons, sections, gallery) - Discord shows this
+       INSTEAD of the card above. The og: tags stay as the fallback.
+       Regenerate the JSON with make_component_embed.py, or edit by hand.
+       ===================================================================== -->
+  <script id="discord:component-embed" type="application/json">
+{
+  "component": {"type":17,"accent_color":16739159,"components":[
+    {"type":12,"items":[{"media":{"url":"https://yoursite.com/og-image.png"}}]},
+    {"type":10,"content":"## Make something people remember.\nProjects, writing and experiments by **Not a Zycher**."},
+    {"type":14,"divider":true,"spacing":1},
+    {"type":9,"components":[{"type":10,"content":"**Project one**\nOne honest sentence about it."}],"accessory":{"type":2,"style":5,"label":"Open","url":"https://yoursite.com/one"}},
+    {"type":9,"components":[{"type":10,"content":"**Project two**\nAnother short, plain sentence."}],"accessory":{"type":2,"style":5,"label":"Open","url":"https://yoursite.com/two"}},
+    {"type":9,"components":[{"type":10,"content":"**Project three**\nSwap in your real work."}],"accessory":{"type":2,"style":5,"label":"Open","url":"https://yoursite.com/three"}},
+    {"type":14,"divider":true,"spacing":1},
+    {"type":1,"components":[{"type":2,"style":5,"label":"Visit site","url":"https://yoursite.com","emoji":{"name":"🌐"}},{"type":2,"style":5,"label":"Latest post","url":"https://yoursite.com/blog","emoji":{"name":"✍️"}},{"type":2,"style":5,"label":"Join Discord","url":"https://discord.gg/yourinvite","emoji":{"name":"💬"}}]},
+    {"type":10,"content":"-# yoursite.com · new stuff every week"}
+  ]}
+}
+  </script>
 
   <!-- Favicon: an emoji, no file needed -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
@@ -122,6 +143,19 @@
     .embed .title { color: #00A8FC; font-weight: 600; font-size: 1rem; margin: 4px 0; line-height: 1.3; }
     .embed .desc { color: #DBDEE1; font-size: .875rem; line-height: 1.4; }
     .embed img { display: block; width: 100%; height: auto; margin-top: 12px; border-radius: 6px; aspect-ratio: 1200 / 630; background: var(--panel); }
+
+    /* component embed mock (how the new Discord layout looks) */
+    .cembed { margin-top: 8px; background: var(--discord-embed); border-left: 4px solid var(--coral); border-radius: 8px; padding: 12px; max-width: 440px; animation: pop .7s cubic-bezier(.2,.9,.3,1.2) .35s both; }
+    .cembed img { display: block; width: 100%; height: auto; border-radius: 6px; aspect-ratio: 1200 / 630; background: var(--panel); }
+    .cembed h4 { color: #fff; font-size: 1.1rem; font-weight: 700; margin: 12px 0 2px; line-height: 1.25; }
+    .cembed p { color: #DBDEE1; font-size: .875rem; line-height: 1.4; }
+    .cembed hr { border: 0; border-top: 1px solid rgba(255,255,255,.1); margin: 12px 0; }
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 0; }
+    .row b { color: #fff; font-size: .9rem; display: block; }
+    .row span { color: #B5BAC1; font-size: .8rem; }
+    .dbtn { flex: none; background: #4E5058; color: #fff; font-size: .8rem; font-weight: 500; padding: 6px 14px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
+    .dbtns { display: flex; flex-wrap: wrap; gap: 8px; }
+    .cembed small { display: block; color: #949BA4; font-size: .7rem; margin-top: 10px; }
     @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
 
     /* work */
@@ -149,7 +183,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .embed { animation: none; }
+      .embed, .cembed { animation: none; }
       .btn, .card { transition: none; }
     }
   </style>
@@ -158,7 +192,7 @@
 <body>
   <header>
     <div class="wrap">
-      <a class="logo" href="#"><i></i>Your Name</a>
+      <a class="logo" href="#"><i></i>Not a Zycher</a>
       <nav>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
@@ -171,7 +205,7 @@
       <div>
         <h1>Make something people remember.</h1>
         <div class="rule"><span></span><span></span></div>
-        <p class="lead">Projects, writing and experiments by Your Name. New stuff every week.</p>
+        <p class="lead">Projects, writing and experiments by Not a Zycher. New stuff every week.</p>
         <div class="cta">
           <a class="btn primary" href="#work">See the projects</a>
           <a class="btn ghost" href="#contact">Say hi</a>
@@ -184,12 +218,18 @@
           <div class="avatar"></div>
           <div>
             <div class="msg-head"><b>You</b><small>Today at 6:42 PM</small></div>
-            <div class="msg-text"><a href="#">https://whos-zycher.github.io/lkijuh8y7t6r5e45fgt6yhujik</a></div>
-            <div class="embed">
-              <div class="site">Your Name</div>
-              <div class="title">Make something people remember.</div>
-              <div class="desc">Projects, writing and experiments by Your Name. New stuff every week.</div>
+            <div class="msg-text"><a href="#">https://yoursite.com</a></div>
+            <div class="cembed">
               <img src="og-image.png" alt="" width="1200" height="630">
+              <h4>Make something people remember.</h4>
+              <p>Projects, writing and experiments by <b>Not a Zycher</b>.</p>
+              <hr>
+              <div class="row"><div><b>Project one</b><span>One honest sentence about it.</span></div><a class="dbtn" tabindex="-1">Open</a></div>
+              <div class="row"><div><b>Project two</b><span>Another short, plain sentence.</span></div><a class="dbtn" tabindex="-1">Open</a></div>
+              <div class="row"><div><b>Project three</b><span>Swap in your real work.</span></div><a class="dbtn" tabindex="-1">Open</a></div>
+              <hr>
+              <div class="dbtns"><a class="dbtn" tabindex="-1">🌐 Visit site</a><a class="dbtn" tabindex="-1">✍️ Latest post</a><a class="dbtn" tabindex="-1">💬 Join Discord</a></div>
+              <small>yoursite.com · new stuff every week</small>
             </div>
           </div>
         </div>
@@ -221,8 +261,8 @@
 
   <footer id="contact">
     <div class="wrap">
-      <span>© 2026 Your Name</span>
-      <a href="mailto:you@yoursite.com">you@yoursite.com</a>
+      <span>© 2026 Not a Zycher</span>
+      <a href="mailto:zycher@sex.pl">twujstary@pl.sex</a>
     </div>
   </footer>
 </body>
